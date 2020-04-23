@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use App\Message;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $messages = DB::table('messages')->where('seller', '=', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(5);
+        // $messages = Message::where('seller', '=', Auth::user()->id)->get()->orderBy('created_at', 'DESC')->paginate(5);
+        return view('home', compact('messages'));
     }
 }

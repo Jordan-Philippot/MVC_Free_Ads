@@ -1,3 +1,9 @@
+h3{
+    text-decoration: underline;
+    border: 1px solid rgb(206, 206, 206);
+    padding: 25px;
+    box-shadow: 1px 2px 30px rgb(206, 206, 206);
+}
 h6{
     text-align: center;
     margin-top: 15px;
@@ -5,14 +11,17 @@ h6{
 .card-body{
     text-align:center;
 }
-#country_list{
-    background-color: red;
-    width: 500px;
+.card{
+    box-shadow: 1px 2px 30px rgb(206, 206, 206);
+    padding: 25px;
 }
-.resultsSearch{
-    background-color: yellow;
-    width: 1000px;
+.homeTitle{
+    margin-top: 20vh;
+    background-color: orange;
+    padding: 150px;
+    border-radius: 50px;
+    text-align: center;
 }
-#dataSearch{
-    background-color: red;
+.pagination{
+    justify-content: center;
 }

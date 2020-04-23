@@ -64,6 +64,7 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                                <a class="dropdown-item" href="{{ route('home') }}">{{ __('Message') }}</a>
                                 <a class="dropdown-item" href="{{ route('profile') }}">{{ __('Profile') }}</a>
                                 <a class="dropdown-item" href="{{ route('edit') }}">{{ __('Edit') }}</a>
                                 <a class="dropdown-item" href="{{ route('delete') }}">{{ __('Delete') }}</a>

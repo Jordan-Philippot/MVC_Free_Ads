@@ -44,10 +44,13 @@
                                     <p class="card-text">{{ $ad->content }}</p>
                                 </div>
                                 <div class="col-sm-12 m-1">
-                                    <p class="card-text text-info">{{ $ad->localisation }}</p>
+                                    <p class="card-text text-info">In {{ $ad->localisation }}</p>
                                 </div>
                                 <div class="col-sm-12 m-1">
-                                    <p class="card-text">{{ $ad->price }}</p>
+                                    <p class="card-text">{{ $ad->price }} $</p>
+                                </div>
+                                <div class="col-sm-12 m-1">
+                                    <p class="card-text">Category : {{ $ad->category }} </p>
                                 </div>
                                 <small><br>created at {{ Carbon\Carbon::parse($ad->created_at)->diffForHumans() }}</small>
                             </div>

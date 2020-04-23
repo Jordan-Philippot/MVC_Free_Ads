@@ -49,7 +49,6 @@ class AdController extends Controller
 
         $ad->save();
 
-        // $ad->session()->flash('status', 'Your ad has been posted');
         return redirect()->route('annonces')->with('status', 'Your ad has been posted');
     }
 
@@ -62,14 +61,11 @@ class AdController extends Controller
     }
 
 
-
-
     public function search(Request $request)
     {
 
         if ($request->ajax()) {
             $price = explode('-', $request->price);
-            $created_at = $request->price;
 
             if (isset($request->created_at) && !empty($request->created_at)) {
                 if (isset($request->category) && !empty($request->category) && isset($request->price) && !empty($request->price)) {
@@ -136,21 +132,8 @@ class AdController extends Controller
             }
 
             return $output;
-            // return response()->json(['success' => true, 'output' => $output]);
         }
     }
-
-
-    // public function search(Request $request)
-    // {
-    //     $contentAd = $request->contentAd;
-    //     $ads = DB::table('ads')->where('title', 'like', "%$contentAd%")->orWhere('content', 'like', "%$contentAd%")->orderBy('created_at', 'DESC')->get();
-    //     return response()->json(['success' => true, 'ads' => $ads]);
-    // }
-
-
-
-
 
     public function edit()
     {
@@ -196,9 +179,5 @@ class AdController extends Controller
     {
         $delete = Ad::where('id', $_GET['id'])->delete();
         return redirect()->route('home')->with('status', 'Ad has been deleted');
-    }
-
-    public function showcontact()
-    {
     }
 }

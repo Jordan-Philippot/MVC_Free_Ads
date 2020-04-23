@@ -71,10 +71,3 @@
     </div>
 </div>
 @endsection
-
-@section('extra-js')
-<script>
-    var image = document.getElementById('picture');
-    sessionStorage.setItem("img" + i, image)
-</script>
-@endsection

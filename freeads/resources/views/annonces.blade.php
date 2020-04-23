@@ -55,6 +55,7 @@
                     @foreach ($ads as $ad)
                     <div class="row justify-content-center m-4">
                         <div class="card p-4" style="width: 18rem;">
+
                             <img class="card-img-top" src="{{ asset('images/' . $ad->picture) }}" alt="Card image cap">
 
                             <div class="card-body">
@@ -71,10 +72,16 @@
                                     <p class="card-text">{{ $ad->price }} $</p>
                                 </div>
                                 <div class="col-sm-12 m-1">
-                                    <p class="card-text">Category {{ $ad->category }}</p>
+                                    <p class="card-text">Category : {{ $ad->category }}</p>
                                 </div>
-                                <form action="" method="get">
-                                    <button type="submit" class="btn btn-primary">Show ad</button>
+                                <div class="col-sm-12 m-1">
+                                    <p class="card-text">Ad coming from : {{ $ad->users }}</p>
+                                </div>
+                                <form action="{{ route('message') }}" method="GET">
+                                    <input type="hidden" name="idAd" id="idAd" value="{{ $ad->id }}">
+                                    <input type="hidden" name="idSender" id="idSender" value="{{ $ad->users }}">
+                                    <input type="hidden" name="idBuyer" id="idBuyer" value="{{ Auth::user()->id }}">
+                                    <button type="submit" class="btn btn-primary m-2">Contact</button>
                                 </form>
                                 <small><br>created at {{ Carbon\Carbon::parse($ad->created_at)->diffForHumans() }}</small>
                             </div>
