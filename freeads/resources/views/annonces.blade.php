@@ -74,9 +74,9 @@
                                 <div class="col-sm-12 m-1">
                                     <p class="card-text">Category : {{ $ad->category }}</p>
                                 </div>
-                                <div class="col-sm-12 m-1">
+                                <!-- <div class="col-sm-12 m-1">
                                     <p class="card-text">Ad coming from : {{ $ad->users }}</p>
-                                </div>
+                                </div> -->
                                 <form action="{{ route('message') }}" method="GET">
                                     <input type="hidden" name="idAd" id="idAd" value="{{ $ad->id }}">
                                     <input type="hidden" name="idSender" id="idSender" value="{{ $ad->users }}">

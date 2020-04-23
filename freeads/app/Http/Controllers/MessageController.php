@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Ad;
 use App\Message;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
 
 class MessageController extends Controller
 {
@@ -29,7 +26,6 @@ class MessageController extends Controller
         ]);
 
         $user = Auth::user();
-
         $message = new Message();
 
         $message->content = $validated['content'];
@@ -39,12 +35,10 @@ class MessageController extends Controller
 
         $message->save();
         return redirect()->route('annonces')->with('status', 'Your message has been send');
-
-        // $ads = DB::table('ads')->where('id', $_POST['id']);
     }
+
     public function sendhome(Request $request)
     {
-
         $validated = $request->validate([
             'content' => ['required', 'string', 'min:4', 'max:1000'],
         ]);
