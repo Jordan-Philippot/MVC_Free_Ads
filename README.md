@@ -6,7 +6,11 @@
 #### Don't forget to install the node modules before launching the application with the command: php artisan serve
 ##### Good navigation :) !!
 
+##### Once registered and connected to your account, you will have access to all the announcements. A multi-criteria search system is available at the top of the page, all in Ajax.
+
 >![searchLaravel](https://user-images.githubusercontent.com/60606478/84198967-abafb900-aaa4-11ea-9ff7-80f8328371dd.png)
+
+##### You can contact the author of an ad directly via a messaging service.
 
 >![adLacosteLaravel](https://user-images.githubusercontent.com/60606478/84197696-a6ea0580-aaa2-11ea-9eab-0d8223cc64a3.png)
 >![editAdLaravel](https://user-images.githubusercontent.com/60606478/84197697-a81b3280-aaa2-11ea-9acd-31fa2c590cc7.png)
